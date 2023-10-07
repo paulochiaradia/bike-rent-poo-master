@@ -11,6 +11,7 @@ import { RentNotFoundError } from "./errors/rent-not-found-error";
 import { RentRepo } from "./ports/rent-repo";
 import { UserRepo } from "./ports/user-repo";
 import { BikeRepo } from "./ports/bike-repo";
+import { OpenRentError } from "./errors/open-rent-error";
 
 export class App {
     crypt: Crypt = new Crypt()
@@ -46,7 +47,10 @@ export class App {
     }
 
     async removeUser(email: string): Promise<void> {
-        await this.findUser(email)
+        const find = await this.findUser(email)
+        if (!find) throw new UserNotFoundError()
+        const openRents = await this.rentRepo.findOpenRentsFor(email)
+        if (openRents.length > 0) throw new OpenRentError()
         await this.userRepo.remove(email)
     }
     
