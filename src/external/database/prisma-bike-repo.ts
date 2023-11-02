@@ -13,7 +13,7 @@ export class PrismaBikeRepo implements BikeRepo {
         throw new Error("Method not implemented.");
     }
     update(id: string, bike: Bike): Promise<void> {
-        throw new Error("Method not implemented.");
+        throw new Error("Method not idasdasmplemented.");
     }
     list(): Promise<Bike[]> {
         throw new Error("Method not implemented.");
