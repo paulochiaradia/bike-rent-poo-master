@@ -1,0 +1,21 @@
+[33m97a3f02[m[33m ([m[1;36mHEAD -> [m[1;32mBanco[m[33m)[m HEAD@{0}: reset: moving to HEAD^
+[33mb1dfad3[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/Open-Rent-Error[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{1}: reset: moving to HEAD^
+[33m6a21d90[m[33m ([m[1;31morigin/bd[m[33m, [m[1;32mmain[m[33m)[m HEAD@{2}: reset: moving to HEAD^
+[33m82903a7[m HEAD@{3}: reset: moving to HEAD^
+[33m34dbed2[m HEAD@{4}: reset: moving to HEAD^
+[33m6dd4962[m[33m ([m[1;31morigin/DB[m[33m)[m HEAD@{5}: reset: moving to HEAD^
+[33m957a6ff[m[33m ([m[1;31morigin/Banco-de-Dados[m[33m, [m[1;32mBanco-de-Dados[m[33m)[m HEAD@{6}: reset: moving to HEAD^
+[33m7137f94[m HEAD@{7}: reset: moving to HEAD^
+[33m7fb1a1d[m[33m ([m[1;31morigin/Banco[m[33m)[m HEAD@{8}: commit: Banco
+[33m7137f94[m HEAD@{9}: commit: Banco
+[33m957a6ff[m[33m ([m[1;31morigin/Banco-de-Dados[m[33m, [m[1;32mBanco-de-Dados[m[33m)[m HEAD@{10}: checkout: moving from Banco-de-Dados to Banco
+[33m957a6ff[m[33m ([m[1;31morigin/Banco-de-Dados[m[33m, [m[1;32mBanco-de-Dados[m[33m)[m HEAD@{11}: commit: teste bd
+[33m6dd4962[m[33m ([m[1;31morigin/DB[m[33m)[m HEAD@{12}: checkout: moving from DB to Banco-de-Dados
+[33m6dd4962[m[33m ([m[1;31morigin/DB[m[33m)[m HEAD@{13}: commit: teste
+[33m34dbed2[m HEAD@{14}: checkout: moving from Add-DB to DB
+[33m34dbed2[m HEAD@{15}: commit: Test
+[33m82903a7[m HEAD@{16}: commit: teste
+[33m6a21d90[m[33m ([m[1;31morigin/bd[m[33m, [m[1;32mmain[m[33m)[m HEAD@{17}: checkout: moving from bd to Add-DB
+[33m6a21d90[m[33m ([m[1;31morigin/bd[m[33m, [m[1;32mmain[m[33m)[m HEAD@{18}: checkout: moving from main to bd
+[33m6a21d90[m[33m ([m[1;31morigin/bd[m[33m, [m[1;32mmain[m[33m)[m HEAD@{19}: commit: Adding Bd
+[33mb1dfad3[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/Open-Rent-Error[m[33m, [m[1;31morigin/HEAD[m[33m)[m HEAD@{20}: clone: from https://github.com/paulochiaradia/bike-rent-poo-master.git
