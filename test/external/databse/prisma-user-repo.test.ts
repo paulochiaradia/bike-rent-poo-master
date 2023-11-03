@@ -5,11 +5,11 @@ import { User } from "../../../src/user"
 describe('PrismaUserRepo', () => {
 
     beforeAll(async () => {
-        await prisma.user.deleteMany()
+        await prisma.user.deleteMany({})
     })
 
     afterAll(async () => {
-        await prisma.user.deleteMany()
+        await prisma.user.deleteMany({})
     })
 
     it('should add a user correctly', async () => {
@@ -31,10 +31,10 @@ describe('PrismaUserRepo', () => {
     })
 
     it('lists all users correctly', async () => {
-        const user1 = new User('user1', 'user1@mail.com', '1234')
-        const user2 = new User('user2', 'user2@mail.com', '1234')
         const repo = new PrismaUserRepo()
+        const user1 = new User('user1', 'user1@mail.com', '1234')
         await repo.add(user1)
+        const user2 = new User('user2', 'user2@mail.com', '1234')
         await repo.add(user2)
         const userList = await repo.list()
         expect(userList.length).toBeGreaterThan(1)

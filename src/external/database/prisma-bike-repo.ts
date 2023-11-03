@@ -1,21 +1,56 @@
 import { Bike } from "../../bike";
 import { BikeRepo } from "../../ports/bike-repo";
+import prisma from "./db";
 
 
 export class PrismaBikeRepo implements BikeRepo {
-    find(id: string): Promise<Bike> {
-        throw new Error("Method not implemented.");
+    async find(id: string): Promise<Bike> {
+        return await prisma.bike.findFirst({
+            where: { id: id }
+        })
     }
-    add(bike: Bike): Promise<string> {
-        throw new Error("Method not implemented.");
+
+    async add(bike: Bike): Promise<string> {
+        const addedBike = await prisma.bike.create({
+            data: {
+                ...bike,
+                imageUrls: {
+                    create: bike.imageUrls.map((url) => ({ url: url }))
+                },
+                location: {
+                    create: bike.location
+                }
+            }
+        })
+        return addedBike.id
     }
-    remove(id: string): Promise<void> {
-        throw new Error("Method not implemented.");
+    async remove(id: string): Promise<void> {
+        await prisma.Img_Urls.deleteMany({
+            where: { bikeId: id },
+        });
+        await prisma.Location.deleteMany({
+            where: { bikeId: id },
+        });
+        await prisma.bike.delete({
+            where: { id },
+        });
     }
-    update(id: string, bike: Bike): Promise<void> {
-        throw new Error("Method not idasdasmplemented.");
+
+    async update(id: string, bike: Bike): Promise<void> {
+        await prisma.bike.update({
+            where: { id: id },
+            data: {
+                ...bike,
+                imageUrls: {
+                    create: bike.imageUrls.map((url) => ({ url: url }))
+                },
+                location: {
+                    create: bike.location
+                }
+            }
+        })
     }
-    list(): Promise<Bike[]> {
-        throw new Error("Method not implemented.");
+    async list(): Promise<Bike[]> {
+        return await prisma.bike.findMany()
     }
 }
